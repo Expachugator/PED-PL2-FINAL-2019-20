@@ -1,0 +1,78 @@
+MODULE testPersonalizado01;
+(* se tiene que imprimir:*)
+(*BOL 1:*)
+(*1*)
+(*BOL 2:*)
+(*0*)
+(*BOL 3:*)
+(*1*)
+(*BOL 4:*)
+(*1*)
+(*BOL 5:*)
+(*1*)
+(*BOL 6:*)
+(*0*)
+(*NOT BOL 1:*)
+(*0*)
+(*NOT BOL 2:*)
+(*1*)
+(*NOT BOL 3:*)
+(*0*)
+(*NOT BOL 4:*)
+(*0*)
+(*NOT BOL 5:*)
+(*0*)
+(*NOT BOL 6:*)
+(*1*)
+
+	VAR
+		bol1 : BOOLEAN;
+		bol2 : BOOLEAN;
+		bol3 : BOOLEAN;
+		bol4 : BOOLEAN;
+		bol5 : BOOLEAN;
+		bol6 : BOOLEAN;
+		
+	BEGIN
+
+		BOL1:=TRUE;
+		bol2:=FALSE;
+		bol3:=(bol1 OR bol1);
+		bol4:=(bol1 OR bol2);
+		bol5:=(bol2 OR bol1);
+		bol6:=(bol2 OR bol2);
+
+		WRITESTRING("BOL 1:");
+		WRITEINT(bol1);
+		WRITESTRING("BOL 2:");
+		WRITEINT(bOl2);
+		WRITESTRING("BOL 3:");
+		WRITEINT(bol3);
+		WRITESTRING("BOL 4:");
+		WRITEINT(bol4);
+		WRITESTRING("BOL 5:");
+		WRITEINT(bol5);
+		WRITESTRING("BOL 6:");
+		WRITEINT(bol6);
+
+		BOL1:=NOT BOL1;
+		BOL2:=NOT BOL2;
+		BOL3:=NOT BOL3;
+		BOL4:=NOT BOL4;
+		BOL5:=NOT BOL5;
+		BOL6:=NOT BOL6;
+
+		WRITESTRING("NOT BOL 1:");
+		WRITEINT(bol1);
+		WRITESTRING("NOT BOL 2:");
+		WRITEINT(bOl2);
+		WRITESTRING("NOT BOL 3:");
+		WRITEINT(bol3);
+		WRITESTRING("NOT BOL 4:");
+		WRITEINT(bol4);
+		WRITESTRING("NOT BOL 5:");
+		WRITEINT(bol5);
+		WRITESTRING("NOT BOL 6:");
+		WRITEINT(bol6);
+
+END testPersonalizado01;

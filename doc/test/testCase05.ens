@@ -1,0 +1,130 @@
+;Quadruple - [DATA null, 62, 1] 
+RES 62
+MOVE #1, .IX
+ 
+;Quadruple - [BR L_cinco, null, null] 
+BR /L_cinco
+ 
+;Quadruple - [INL L_cinco, 0, null] 
+L_cinco: NOP
+ 
+;Quadruple - [MV T_5, 1, null] 
+MOVE #1, #5[.IX] 
+
+;Quadruple - [MVA T_6, v, null] 
+MOVE #0, #6[.IX]
+
+;Quadruple - [STP T_6, T_5, null] 
+MOVE #6[.IX],.R0
+MOVE #5[.IX],[.R0]
+;Quadruple - [MV T_12, 2, null] 
+MOVE #2, #12[.IX] 
+
+;Quadruple - [MVA T_13, v, null] 
+MOVE #0, #13[.IX]
+
+;Quadruple - [STP T_13, T_12, null] 
+MOVE #13[.IX],.R0
+MOVE #12[.IX],[.R0]
+;Quadruple - [MVA T_20, v, null] 
+MOVE #0, #20[.IX]
+
+;Quadruple - [MV T_22, T_19, null] 
+MOVE #19[.IX], #22[.IX] 
+
+;Quadruple - [ADD T_23, T_21, T_22] 
+ADD #-21[.IX], #-22[.IX]
+MOVE .A, #-23[.IX]
+;Quadruple - [MVP T_20, T_23, null] 
+MOVE #23[.IX],.R0
+MOVE [.R0],#20[.IX]
+ 
+;Quadruple - [MVA T_29, v, null] 
+MOVE #0, #29[.IX]
+
+;Quadruple - [MV T_31, T_25, null] 
+MOVE #25[.IX], #31[.IX] 
+
+;Quadruple - [ADD T_32, T_30, T_31] 
+ADD #-30[.IX], #-31[.IX]
+MOVE .A, #-32[.IX]
+;Quadruple - [MVP T_29, T_32, null] 
+MOVE #32[.IX],.R0
+MOVE [.R0],#29[.IX]
+ 
+;Quadruple - [MUL T_33, T_20, T_29] 
+MUL #20[.IX],#29[.IX]
+MOVE .A,#33[.IX]
+ 
+;Quadruple - [MVA T_43, v, null] 
+MOVE #0, #43[.IX]
+
+;Quadruple - [MV T_45, T_39, null] 
+MOVE #39[.IX], #45[.IX] 
+
+;Quadruple - [ADD T_46, T_44, T_45] 
+ADD #-44[.IX], #-45[.IX]
+MOVE .A, #-46[.IX]
+;Quadruple - [MVP T_43, T_46, null] 
+MOVE #46[.IX],.R0
+MOVE [.R0],#43[.IX]
+ 
+;Quadruple - [MUL T_47, T_33, T_43] 
+MUL #33[.IX],#43[.IX]
+MOVE .A,#47[.IX]
+ 
+;Quadruple - [MVA T_48, v, null] 
+MOVE #0, #48[.IX]
+
+;Quadruple - [STP T_48, T_47, null] 
+MOVE #48[.IX],.R0
+MOVE #47[.IX],[.R0]
+WRSTR /L_0
+WRCHAR #10
+;Quadruple - [MVA T_51, v, null] 
+MOVE #0, #51[.IX]
+
+;Quadruple - [MV T_53, T_50, null] 
+MOVE #50[.IX], #53[.IX] 
+
+;Quadruple - [ADD T_54, T_52, T_53] 
+ADD #-52[.IX], #-53[.IX]
+MOVE .A, #-54[.IX]
+;Quadruple - [MVP T_51, T_54, null] 
+MOVE #54[.IX],.R0
+MOVE [.R0],#51[.IX]
+ 
+;Quadruple - [WRITEINT T_51, null, null] 
+WRINT #51[.IX]
+WRCHAR #10
+WRSTR /L_1
+WRCHAR #10
+;Quadruple - [MVA T_57, v, null] 
+MOVE #0, #57[.IX]
+
+;Quadruple - [MV T_59, T_56, null] 
+MOVE #56[.IX], #59[.IX] 
+
+;Quadruple - [ADD T_60, T_58, T_59] 
+ADD #-58[.IX], #-59[.IX]
+MOVE .A, #-60[.IX]
+;Quadruple - [MVP T_57, T_60, null] 
+MOVE #60[.IX],.R0
+MOVE [.R0],#57[.IX]
+ 
+;Quadruple - [WRITEINT T_57, null, null] 
+WRINT #57[.IX]
+WRCHAR #10
+;Quadruple - [BR L_F_MAIN, null, null] 
+BR /L_F_MAIN
+ 
+;Quadruple - [INL L_F_MAIN, 0, null] 
+L_F_MAIN: NOP
+ 
+;Quadruple - [HALT null, null, null] 
+HALT
+ 
+;Quadruple - [CADENA Pos 1:, L_0, null] 
+L_0: DATA "Pos 1:"
+;Quadruple - [CADENA Pos 3:, L_1, null] 
+L_1: DATA "Pos 3:"

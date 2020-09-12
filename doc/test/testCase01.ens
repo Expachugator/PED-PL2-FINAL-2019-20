@@ -1,0 +1,19 @@
+;Quadruple - [DATA null, 0, 0] 
+RES 0
+MOVE #0, .IX
+ 
+;Quadruple - [BR L_uno, null, null] 
+BR /L_uno
+ 
+;Quadruple - [INL L_uno, 0, null] 
+L_uno: NOP
+ 
+;Quadruple - [BR L_F_MAIN, null, null] 
+BR /L_F_MAIN
+ 
+;Quadruple - [INL L_F_MAIN, 0, null] 
+L_F_MAIN: NOP
+ 
+;Quadruple - [HALT null, null, null] 
+HALT
+ 

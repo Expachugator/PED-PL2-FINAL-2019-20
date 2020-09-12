@@ -1,0 +1,77 @@
+;Quadruple - [DATA null, 15, 3] 
+RES 15
+MOVE #3, .IX
+ 
+;Quadruple - [BR L_seis, null, null] 
+BR /L_seis
+ 
+;Quadruple - [INL L_seis, 0, null] 
+L_seis: NOP
+ 
+;Quadruple - [MV T_1, 10, null] 
+MOVE #10, #1[.IX] 
+
+;Quadruple - [MVA T_2, a1, null] 
+MOVE #0, #2[.IX]
+
+;Quadruple - [STP T_2, T_1, null] 
+MOVE #2[.IX],.R0
+MOVE #1[.IX],[.R0]
+;Quadruple - [MV T_4, 5, null] 
+MOVE #5, #4[.IX] 
+
+;Quadruple - [MVA T_5, b1, null] 
+MOVE #2, #5[.IX]
+
+;Quadruple - [STP T_5, T_4, null] 
+MOVE #5[.IX],.R0
+MOVE #4[.IX],[.R0]
+;Quadruple - [STARTRA null, null, null] 
+MOVE .SP,.R0
+PUSH #-1
+PUSH .SR
+PUSH .IX
+
+;Quadruple - [MVP T_8, b1, null] 
+MOVE #2,.R0
+MOVE [.R0],#8[.IX]
+ 
+;Quadruple - [MVP T_7, a1, null] 
+MOVE #0,.R0
+MOVE [.R0],#7[.IX]
+ 
+;Quadruple - [PARAM T_7, null, null] 
+PUSH #7[.IX]
+ 
+;Quadruple - [PARAM T_8, null, null] 
+PUSH #8[.IX]
+ 
+;Quadruple - [CALL restar, T_9, null] 
+MOVE .R0,.IX
+CALL /L_restar
+MOVE .IX,.SP
+MOVE #-3[.IX],.R0
+MOVE .R0,.IX
+
+;Quadruple - [RETVALUE T_9, null, null] 
+MOVE [.IY],#9[.IX] 
+
+;Quadruple - [MVA T_10, resta, null] 
+MOVE #1, #10[.IX]
+
+;Quadruple - [STP T_10, T_9, null] 
+MOVE #10[.IX],.R0
+MOVE #9[.IX],[.R0]
+WRSTR /L_2
+WRCHAR #10
+;Quadruple - [BR L_F_MAIN, null, null] 
+BR /L_F_MAIN
+ 
+;Quadruple - [INL L_F_MAIN, 0, null] 
+L_F_MAIN: NOP
+ 
+;Quadruple - [HALT null, null, null] 
+HALT
+ 
+;Quadruple - [CADENA Restar:, L_2, null] 
+L_2: DATA "Restar:"

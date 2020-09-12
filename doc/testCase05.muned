@@ -1,0 +1,46 @@
+(* Tipos de datos. Arrays*)
+(* se tienen que imprimir las siguientes lineas:*)
+(*Pos 1:*)
+(*1*)
+(*Pos 3:*)
+(*4*)
+
+MODULE cinco;
+
+	TYPE TVector = ARRAY [1..4] OF INTEGER;
+	VAR v: TVector;
+     
+
+	  
+BEGIN
+	v[1] := 3;
+
+	WRITESTRING("Pos 1a:");
+	WRITEINT(v[1]);
+
+	WRITESTRING("Pos 2a:");
+	WRITEINT(v[2]);
+
+	WRITESTRING("Pos 3a:");
+	WRITEINT(v[3]);
+
+	WRITESTRING("Pos 4a:");
+	WRITEINT(v[4]);
+
+	v[2] := 5;
+	v[3] := v[1];
+	v[4] := v[2];
+
+	WRITESTRING("Pos 1b:");
+	WRITEINT(v[1]);
+
+	WRITESTRING("Pos 2b:");
+	WRITEINT(v[2]);
+
+	WRITESTRING("Pos 3b:");
+	WRITEINT(v[3]);
+
+	WRITESTRING("Pos 4b:");
+	WRITEINT(v[4]);
+
+END cinco;

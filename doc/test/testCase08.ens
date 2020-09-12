@@ -1,0 +1,59 @@
+;Quadruple - [DATA null, 5, 1] 
+RES 5
+MOVE #1, .IX
+ 
+;Quadruple - [BR L_ocho, null, null] 
+BR /L_ocho
+ 
+;Quadruple - [INL L_ocho, 0, null] 
+L_ocho: NOP
+ 
+;Quadruple - [MV T_1, 9, null] 
+MOVE #9, #1[.IX] 
+
+;Quadruple - [INC T_1, null, null] 
+INC #1[.IX]
+
+;Quadruple - [MV T_0, 1, null] 
+MOVE #1, #0[.IX] 
+
+;Quadruple - [INL L_0, null, null] 
+L_0: NOP
+ 
+;Quadruple - [MVA T_3, a1, null] 
+MOVE #0, #3[.IX]
+
+;Quadruple - [STP T_3, T_0, null] 
+MOVE #3[.IX],.R0
+MOVE #0[.IX],[.R0]
+;Quadruple - [CMP T_0, T_1, null] 
+CMP #0[.IX], #1[.IX]
+
+;Quadruple - [BZ L_1, null, null] 
+BZ /L_1
+
+;Quadruple - [MVP T_2, a1, null] 
+MOVE #0,.R0
+MOVE [.R0],#2[.IX]
+ 
+;Quadruple - [WRITEINT T_2, null, null] 
+WRINT #2[.IX]
+WRCHAR #10
+;Quadruple - [INC T_0, null, null] 
+INC #0[.IX]
+
+;Quadruple - [BR L_0, null, null] 
+BR /L_0
+ 
+;Quadruple - [INL L_1, null, null] 
+L_1: NOP
+ 
+;Quadruple - [BR L_F_MAIN, null, null] 
+BR /L_F_MAIN
+ 
+;Quadruple - [INL L_F_MAIN, 0, null] 
+L_F_MAIN: NOP
+ 
+;Quadruple - [HALT null, null, null] 
+HALT
+ 

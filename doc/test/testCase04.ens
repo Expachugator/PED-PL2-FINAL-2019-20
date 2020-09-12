@@ -1,0 +1,126 @@
+;Quadruple - [DATA null, 29, 6] 
+RES 29
+MOVE #6, .IX
+ 
+;Quadruple - [BR L_cuatro, null, null] 
+BR /L_cuatro
+ 
+;Quadruple - [INL L_cuatro, 0, null] 
+L_cuatro: NOP
+ 
+;Quadruple - [MV T_1, 10, null] 
+MOVE #10, #1[.IX] 
+
+;Quadruple - [MVA T_2, a1, null] 
+MOVE #0, #2[.IX]
+
+;Quadruple - [STP T_2, T_1, null] 
+MOVE #2[.IX],.R0
+MOVE #1[.IX],[.R0]
+;Quadruple - [MV T_4, 2, null] 
+MOVE #2, #4[.IX] 
+
+;Quadruple - [MVA T_5, b1, null] 
+MOVE #5, #5[.IX]
+
+;Quadruple - [STP T_5, T_4, null] 
+MOVE #5[.IX],.R0
+MOVE #4[.IX],[.R0]
+;Quadruple - [MVP T_7, a1, null] 
+MOVE #0,.R0
+MOVE [.R0],#7[.IX]
+ 
+;Quadruple - [MVP T_8, b1, null] 
+MOVE #5,.R0
+MOVE [.R0],#8[.IX]
+ 
+;Quadruple - [MUL T_9, T_7, T_8] 
+MUL #7[.IX],#8[.IX]
+MOVE .A,#9[.IX]
+ 
+;Quadruple - [MVA T_10, mult, null] 
+MOVE #1, #10[.IX]
+
+;Quadruple - [STP T_10, T_9, null] 
+MOVE #10[.IX],.R0
+MOVE #9[.IX],[.R0]
+;Quadruple - [MVP T_11, mult, null] 
+MOVE #1,.R0
+MOVE [.R0],#11[.IX]
+ 
+;Quadruple - [WRITEINT T_11, null, null] 
+WRINT #11[.IX]
+WRCHAR #10
+;Quadruple - [MV T_13, 1, null] 
+MOVE #1, #13[.IX] 
+
+;Quadruple - [MVA T_14, bol1, null] 
+MOVE #3, #14[.IX]
+
+;Quadruple - [STP T_14, T_13, null] 
+MOVE #14[.IX],.R0
+MOVE #13[.IX],[.R0]
+;Quadruple - [MV T_16, 0, null] 
+MOVE #0, #16[.IX] 
+
+;Quadruple - [MVA T_17, bol2, null] 
+MOVE #4, #17[.IX]
+
+;Quadruple - [STP T_17, T_16, null] 
+MOVE #17[.IX],.R0
+MOVE #16[.IX],[.R0]
+;Quadruple - [MVP T_19, bol1, null] 
+MOVE #3,.R0
+MOVE [.R0],#19[.IX]
+ 
+;Quadruple - [BRF T_19, L_0, null] 
+CMP #0, #19[.IX] 
+BZ /L_0 
+
+;Quadruple - [MV T_21, 1, null] 
+MOVE #1, #21[.IX] 
+
+;Quadruple - [BR L_2, null, null] 
+BR /L_2
+ 
+;Quadruple - [INL L_0, null, null] 
+L_0: NOP
+ 
+;Quadruple - [MVP T_20, bol2, null] 
+MOVE #4,.R0
+MOVE [.R0],#20[.IX]
+ 
+;Quadruple - [BRF T_20, L_1, null] 
+CMP #0, #20[.IX] 
+BZ /L_1 
+
+;Quadruple - [MV T_21, 1, null] 
+MOVE #1, #21[.IX] 
+
+;Quadruple - [BR L_2, null, null] 
+BR /L_2
+ 
+;Quadruple - [INL L_1, null, null] 
+L_1: NOP
+ 
+;Quadruple - [MV T_21, 0, null] 
+MOVE #0, #21[.IX] 
+
+;Quadruple - [INL L_2, null, null] 
+L_2: NOP
+ 
+;Quadruple - [MVA T_22, bol3, null] 
+MOVE #2, #22[.IX]
+
+;Quadruple - [STP T_22, T_21, null] 
+MOVE #22[.IX],.R0
+MOVE #21[.IX],[.R0]
+;Quadruple - [BR L_F_MAIN, null, null] 
+BR /L_F_MAIN
+ 
+;Quadruple - [INL L_F_MAIN, 0, null] 
+L_F_MAIN: NOP
+ 
+;Quadruple - [HALT null, null, null] 
+HALT
+ 

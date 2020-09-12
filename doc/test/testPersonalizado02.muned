@@ -1,0 +1,46 @@
+MODULE testPersonalizado02;
+
+(* pruebas con operaciones *)
+(* se tiene que imprimir: *)
+(*10*)
+(*20*)
+(*10*)
+(*2*)
+(*200*)
+(*400*)
+(*10*)
+(*200*)
+(*100*)
+
+  CONST A = 10;
+	B = 20;
+
+  VAR mult : INTEGER;
+	a1:INTEGER;
+	b1:INTEGER;
+	mult1:INTEGER;
+	mult2:INTEGER;
+	mult3:INTEGER;
+	mult4:INTEGER;
+				
+  BEGIN
+
+    WRITEINT(A);
+    WRITEINT(B);
+    a1:=A;
+    WRITEINT(a1);
+    b1:=2;
+    WRITEINT(b1);
+
+    mult:=(A*B);
+    WRITEINT(mult);
+    mult1:=(B*B);
+    WRITEINT(mult1);
+    WRITEINT(a1);
+    b1:=2;
+    WRITEINT(mult);
+
+    mult2:=(A*a1);
+    WRITEINT(mult2);
+
+  END testPersonalizado02;
